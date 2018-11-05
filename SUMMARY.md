@@ -6,6 +6,6 @@
 ## Integrations
 
 * [Linux Agent](integrations/linux-agent/README.md)
-  * [Upgrading the Agent](integrations/linux-agent/untitled-1.md)
+  * [Upgrading the Agent](integrations/linux-agent/upgrading-the-agent.md)
   * [Installation Methods](integrations/linux-agent/installation-methods.md)
 

@@ -1,6 +1,6 @@
 # Installation Methods
 
-## Standard Installation <a id="bkmrk-page-title"></a>
+## Standard Installation  <a id="bkmrk-page-title"></a>
 
 ### Get Command From Linux Integration Setup Page
 
@@ -20,9 +20,9 @@ sudo N_APIKEY=your-apikey N_HOSTNAME=your-element-name bash -c "$(curl -Ls http:
 
 `your-apikey` is the API key generated from the integration and `your-element-name` can be any element name you wish \(it must be unique from your other elements\).
 
-### Install Linux Agent 
+### Install Linux Agent
 
-Paste the command from the previous section into your command line. This installs the agent and adds your account’s unique API key to the configuration file. Prefer to install manually? See our [Manual Installation](http://54.172.193.4:8080/books/linux-agent/page/manual-installation) page. 
+Paste the command from the previous section into your command line. This installs the agent and adds your account’s unique API key to the configuration file. Prefer to install manually? See our [Manual Installation](http://54.172.193.4:8080/books/linux-agent/page/manual-installation) page.
 
 If you install our Linux Agent on an AWS EC2 or Azure VM, the EC2’s / VM’s power state \(it will come in as the attribute `hostRunning` with a value of `true` or `false`\) and tags are copied over to the corresponding Linux SERVER element. You can then use this information to create policies.
 
@@ -31,10 +31,9 @@ If you install our Linux Agent on an AWS EC2 or Azure VM, the EC2’s / VM’s p
 1. Navigate to the Linux Agent configuration file found at `<b>/opt/netuitive-agent/conf/netuitive-agent.conf</b>`.
 2. Ensure the API key provided in step 1 is input in the _netuitive-agent.conf_ file. The section below is only a portion of the config file. Go [here](https://raw.githubusercontent.com/netuitive/omnibus-netuitive-agent/master/netuitive/conf/netuitive-agent.conf) to view the full config file.  
 
+\[\[NetuitiveHandler\]\]
 
-   \[\[NetuitiveHandler\]\]
-
-   ```bash
+```bash
    ### MetriclyCloud URL to post the metrics
    url = https://api.app.metricly.com/ingest/infrastructure
 
@@ -59,14 +58,14 @@ If you install our Linux Agent on an AWS EC2 or Azure VM, the EC2’s / VM’s p
    # local statsd server
    [[[statsd]]]
    enabled = False
-   ```
+```
 
-3. Options:
+1. Options:
    * **Tags**:  Substitute _tags_ value with desired tags and uncomment the line to pass in tags for your element.
    * **Relations**:  Substitute _relations_ value with desired element relationships; must include the fully qualified name of the elements. Uncomment the line to pass in relationships for your element.
    * **Collectors**: Adjust  default collectors \(CPU, DiskSpace, DiskUsage, Heartbeat, LoadAverage, Memory, VMStat, Network\) using the configuration options found [here](https://www.metricly.com/support/integrations/linux/#additional-configuration-options).
-4. **Save** your file.
-5. **Restart** the Linux Agent service to begin monitoring your data with Metricly.
+2. **Save** your file.
+3. **Restart** the Linux Agent service to begin monitoring your data with Metricly.
 
 This integration’s package \(computed metrics, dashboards, and policies that will give you important events and alerts\) will be automatically enabled and provisioned to your account as soon as Metricly receives data from the integration.
 
@@ -83,9 +82,7 @@ The _PACKAGES_ button on the integration setup page will become active once data
 
 You can put the agent in Debug mode by changing the `logger_root` section of the configuration file from `INFO` to `DEBUG`. You can also review our chapter on [troubleshooting](http://54.172.193.4:8080/books/linux-agent/chapter/troubleshooting) for more information on [debugging](http://54.172.193.4:8080/books/linux-agent/page/set-logs-to-debugging-mode).
 
-
-
-## Docker Installation <a id="bkmrk-page-title"></a>
+## Docker Installation  <a id="bkmrk-page-title"></a>
 
 ### Copy API Key From Docker Integration
 
@@ -130,6 +127,5 @@ docker run -d -p 8125:8125/udp --name netuitive-agent -e DOCKER_HOSTNAME="<my-do
 | FIP | Tells the Netuitive StatsD agent what IP address to forward to. |  |
 | FPRT | Tells the Netuitive StatsD agent what port to forward to. 8125 is the default |  |
 
-
-this is a test change. 
+this is a test change.
 
