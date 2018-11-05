@@ -17,7 +17,7 @@
 3.  Get the difference between the old configuration file \(**netuitive-agent.conf**\) and the new configuration file \(**netuitive-agent.conf.rpmnew**\): `diff -u /opt/netuitive-agent/conf/netuitive-agent.conf.rpmnew /opt/netuitiveagent/conf/netuitive-agent.conf`
 4. Copy your changes from the old file to new file.
 5. Rename the old file to **netuitive-agent.conf.old** and the new configuration file to **netuitive-agent.conf**.
-6. Start the Linux Agent. The most common commands being: 
+6. Start the Linux Agent. The most common commands for that are: 
    * `service netuitive-agent start`
    * `/etc/init.d/netuitive-agent start`
    * `initctl start netuitive-agent`
